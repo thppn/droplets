@@ -65,7 +65,7 @@ def main(markdown_file):
     folders, files, commands = parse_markdown(content)
 
     # Create the bash files and folders
-    create_bash_files(master_folder, folders, files, commands)
+    create_bash_files('.', folders, files, commands)
 
 if __name__ == "__main__":
     import sys
