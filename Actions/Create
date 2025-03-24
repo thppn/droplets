@@ -1,0 +1,14 @@
+#!/bin/bash
+curl -X POST "https://api.digitalocean.com/v2/droplets" \
+     -H "Authorization: Bearer $(cat ~/.do_token)" \
+     -H "Content-Type: application/json" \
+     -d "$(jq -n --arg fingerprint "$(cat ~/fingerprint)" '{
+           name: "my-droplet",
+           region: "nyc3",
+           size: "s-1vcpu-1gb",
+           image: "ubuntu-20-04-x64",
+           ssh_keys: [$fingerprint],
+           backups: false,
+           ipv6: true,
+           monitoring: true
+         }')"

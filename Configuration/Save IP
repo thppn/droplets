@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -X GET "https://api.digitalocean.com/v2/droplets"      -H "Authorization: Bearer $(cat ~/.do_token)" | jq '.droplets[] | {id: .id, name: .name, ip: .networks.v4[0].ip_address}' | jq -r '.ip' > 'ip'

@@ -1,0 +1,3 @@
+#!/bin/bash
+curl -X DELETE "https://api.digitalocean.com/v2/droplets/$1" \
+     -H "Authorization: Bearer $(cat ~/.do_token)"

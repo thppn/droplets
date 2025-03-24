@@ -1,0 +1,3 @@
+#!/bin/bash
+curl -X GET "https://api.digitalocean.com/v2/account/keys" \
+     -H "Authorization: Bearer $(cat ~/.do_token)" | jq -r '.ssh_keys[0].fingerprint' > fingerprint

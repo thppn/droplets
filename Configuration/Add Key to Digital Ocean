@@ -1,0 +1,8 @@
+#!/bin/bash
+curl -X POST "https://api.digitalocean.com/v2/account/keys" \
+     -H "Authorization: Bearer $(cat ~/.do_token)" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "name": "Termux SSH Key",
+           "public_key": "'"$(cat ~/.ssh/id_rsa.pub)"'"
+         }'
