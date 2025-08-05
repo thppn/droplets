@@ -55,7 +55,7 @@ def create_bash_files(master_folder, folders, files, commands):
 
 def main(markdown_file):
     # Derive the master folder name from the markdown file name
-    master_folder = os.path.splitext(os.path.basename(markdown_file))[0]
+    master_folder = '.' #os.path.splitext(os.path.basename(markdown_file))[0]
 
     # Read the markdown file
     with open(markdown_file, 'r') as f:
@@ -65,7 +65,7 @@ def main(markdown_file):
     folders, files, commands = parse_markdown(content)
 
     # Create the bash files and folders
-    create_bash_files('.', folders, files, commands)
+    create_bash_files(master_folder, folders, files, commands)
 
 if __name__ == "__main__":
     import sys
