@@ -3,8 +3,8 @@ import re
 
 def parse_markdown(markdown_content):
     # Split the content into sections based on # headings
-    sections = re.split(r'^#\s+.+$', markdown_content, flags=re.MULTILINE)
-    headings = re.findall(r'^#\s+(.+)$', markdown_content, flags=re.MULTILINE)
+    sections = re.split(r'^##\s+.+$', markdown_content, flags=re.MULTILINE)
+    headings = re.findall(r'^##\s+(.+)$', markdown_content, flags=re.MULTILINE)
 
     # If there are no sections, return empty results
     if not headings:

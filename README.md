@@ -1,5 +1,6 @@
-
-# Actions
+# mdrop
+<!-- https://github.com/thppn/droplets/blob/main/mdrop.png -->
+## Actions
 ### List
 ```bash
 curl -X GET "https://api.digitalocean.com/v2/droplets" \
@@ -35,7 +36,7 @@ curl -X DELETE "https://api.digitalocean.com/v2/droplets/$1" \
 ```bash
 ssh root@$(cat ip)
 ```
-# Configuration
+## Configuration
 ### Generate SSH key
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
