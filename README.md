@@ -1,5 +1,5 @@
 # mdrop
-<!-- https://github.com/thppn/droplets/blob/main/mdrop.png -->
+<!-- https://github.com/thppn/droplets/blob/main/mdrop.png?raw=true -->
 ## Actions
 ### List
 ```bash
