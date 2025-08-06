@@ -34,7 +34,7 @@ curl -X DELETE "https://api.digitalocean.com/v2/droplets/$1" \
 
 ### Connect
 ```bash
-ssh root@$(cat ip)
+ssh root@$(cat .ip)
 ```
 ## Configuration
 ### Generate SSH key
@@ -55,11 +55,11 @@ curl -X POST "https://api.digitalocean.com/v2/account/keys" \
 ### Save fingerprint
 ```bash
 curl -X GET "https://api.digitalocean.com/v2/account/keys" \
-     -H "Authorization: Bearer $(cat ~/.do_token)" | jq -r '.ssh_keys[0].fingerprint' > fingerprint
+     -H "Authorization: Bearer $(cat ~/.do_token)" | jq -r '.ssh_keys[0].fingerprint' > .fingerprint
 ```
 
 ### Save IP
 
 ```bash
-curl -X GET "https://api.digitalocean.com/v2/droplets"      -H "Authorization: Bearer $(cat ~/.do_token)" | jq '.droplets[] | {id: .id, name: .name, ip: .networks.v4[0].ip_address}' | jq -r '.ip' > 'ip'
+curl -X GET "https://api.digitalocean.com/v2/droplets"      -H "Authorization: Bearer $(cat ~/.do_token)" | jq '.droplets[] | {id: .id, name: .name, ip: .networks.v4[0].ip_address}' | jq -r '.ip' > '.ip'
 ```
